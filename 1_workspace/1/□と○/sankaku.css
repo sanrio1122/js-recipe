@@ -1,0 +1,21 @@
+/* .transition {
+  /* 変化するすべてのプロパティ（ all ）を、1 秒（ 1s ）かけて変化させる */
+/* transition: border-radius 1s, border-right 1s, border-left 1s, border-bottom 1s; */
+.transition {
+  transition: all 1s;
+}
+.square {
+  width: 100px;
+  height: 100px;
+  background-color: black;
+}
+.rounded {
+  border-radius: 50px;
+}
+.triangle {
+  width: 0;
+  height: 0;
+  border-right: 50px solid transparent;
+  border-left: 50px solid transparent;
+  border-bottom: 100px solid black;
+}
