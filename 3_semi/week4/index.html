@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      section {
+        margin: 1rem;
+        padding: 1rem;
+        border: solid 1px black;
+      }
+      div {
+        margin-top: 0.5rem;
+      }
+
+      input {
+        width: 30rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <!-- いわゆるtextContent -->
+      <div>{{count}}</div>
+      <button v-on:click="countUp">Count Up</button>
+      <!-- テンプレート構文について -->
+      <section>
+        {{ message }}
+      </section>
+      <!-- v-bindについて -->
+      <section>
+        <div title="やあ">
+          title属性は、ホバー（カーソルを当ててしばらく静止）するとテキストを表示させます。
+        </div>
+        <div v-bind:title="title">
+          このテキストにマウスをホバーすると、動的に変わるtitleプロパティが見られます。
+        </div>
+      </section>
+      <!-- v-ifとv-elseについて -->
+      <section>
+        <span v-if="seen"
+          >今、seenはtrueです。falseに書き換えてみましょう。</span
+        >
+        <span v-else>今、seenはfalseです。</span>
+      </section>
+      <!-- v-ifとv-elseについて -->
+      <section>
+        <span v-if="seen"
+          >今、seenはtrueです。falseに書き換えてみましょう。</span
+        >
+      </section>
+      <!-- v-forについて 途中-->
+      <section>
+        <div>Learn JavaScript</div>
+        <div>Learn Vue</div>
+        <div>Learn Build somtething awesome</div>
+      </section>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+      const app = new Vue({
+        el: "#app",
+        // data＝変数
+        data: {
+          message: "Vue Devtoolsを使ってこのメッセージを書き換えてみましょう！",
+          title: "You loaded this page on " + new Date().toLocaleString(),
+          seen: true,
+          count: 0,
+        },
+        // methodsで関数  関数名：　function(){...}
+        methods: {
+          countUp: function() {
+            this.count += 1
+          },
+        },
+      })
+    </script>
+  </body>
+</html>
